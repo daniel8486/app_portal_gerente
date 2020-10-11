@@ -46,7 +46,8 @@ append :linked_dirs, "storage", "log", "tmp/pids", "tmp/cache", "tmp/sockets", "
 # set :ssh_options, verify_host_key: :secure
 
 after 'deploy:finished', 'deploy:restart'
-namespace :deploy do task :restart do
+namespace :deploy do 
+ task :restart do
   invoke 'unicorn:stop'
   invoke 'unicorn:start'
  end
