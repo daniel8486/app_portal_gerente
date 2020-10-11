@@ -1,0 +1,64 @@
+
+<main class="login-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-lg">
+                <div class="card">
+                    <div class="card-header">Dados dos Usuários </div>
+                    <div class="card-body">
+                        
+                             <div class="row-center">
+
+                             <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                    <strong><%= flash_message %>  </strong> 
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    </div>
+
+                                     <%#= form_with(url: site_search_path ,local: true, method: :get, class: 'form-group') do |form| %>
+
+                                     
+                                        <%#= form.text_field :term , placeholder: 'Informe o código de acesso , para consulta ... ', class: 'form-control'%> 
+                                        
+                                        <%#= form.submit "Pesquisar", class: 'btn btn-primary'%>
+                                        <%# end %>
+
+                                  
+
+                                 <table class="table table-bordered">
+                                      <thead>
+                                        <tr>
+                                          <th scope="col">ID</th>
+                                          <th scope="col">ACESSO</th>
+                                          <th scope="col">CHAPA</th>
+                                          <th scope="col">PASSWORD</th>
+                                          <th scope="col">Ações</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                       <% @users.each do |user|%>
+                                        <tr>
+                                          <th scope="row"><%= user.id %></th>
+                                          <td> <%= user.acesso %></td>
+                                          <td><%= user.chapa %></td>
+                                          <td>  <%#= user.password%></td>
+                                          <td style="width: 100px">
+                                          <%= link_to 'editar' ,edit_pages_user_path(user), class:"btn btn-primary btn-circle" %>
+                                             <i class="fa fa-edit"></i>
+                                            <%# end %>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                      <% end %>
+                                    </table>
+                                    <p class="text-center"> <%#= paginate @users %> </p>
+                                </div>
+                          </div>
+                     </div>
+                 </div>
+             </div>
+</main>
+   
+</body>
+</html>

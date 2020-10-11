@@ -1,0 +1,2 @@
+module Pages::AprovarBatidaHelper
+end

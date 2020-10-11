@@ -1,0 +1,57 @@
+   
+           <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card strpied-tabled-with-hover">
+                                <div class="card-header ">
+                                <hr>
+                                    <h4 class="card-title">Consulte os Registros dos pontos</h4>
+                                <hr>    
+                                 <%= form_tag pages_point_index_path do %>
+                                   <div class="row">
+                                     <div class="col-6">
+                                       <label>Informe uma Data Inicial :</label>
+                                       <%= date_field_tag :data_ini , "", class: 'form-control' %>
+                                     </div>
+                                     <div class="col-6">
+                                       <label>Informe uma Data Final : </label>
+                                       <%= date_field_tag :data_fim , "", class: 'form-control'%> 
+                                     </div>
+                                    
+                                   </div>
+                                      <div class="col-3">
+                                       <%= submit_tag "Enviar" , class: 'btn btn-primary'%> 
+                                      </div>
+                                 <% end %>
+                                       
+                                </div>
+                                   
+                                <div class="card-body table-responsive">
+                                 <hr>
+                                    <h4 class="card-title">Detalhamento</h4>
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <th>Batidas</th>
+                                            <th>Horario</th>
+                                            <th>Data</th>
+                                        </thead>
+                                        <% if @result.present? %>
+                                         <% @result.each do |point| %> 
+                                        <tbody>
+                                            <tr>
+                                                <th><%= point.try(:BATIDAS).try(:content)%></th>
+                                                <th><%= point.try(:HORARIO).try(:content) %></th>
+                                                <th><%= point.try(:DATA).try(:content)%></th>
+                                            </tr>
+
+                                            <% end %>           
+                                         <% end %> 
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                          
+        </div>
+    </div>

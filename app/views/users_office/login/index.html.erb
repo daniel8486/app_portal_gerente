@@ -1,0 +1,21 @@
+
+<%= form_tag users_office_login_index_path, class: 'form-signin' do %>
+  <img class="mb-4" src="https://www.oster.com.br/arquivos/_OSTERBRASIL_campanha-natal-2017-pintos.png" alt="" width="250" height="100">
+     <h2 class="h3 mb-3 font-weight-normal">Portal | Pintos LTDA</h2>
+        <label for="inputText" class="sr-only">Usuário</label>
+          <%= text_field_tag :username , "", class: 'form-control',placeholder: "Usuário"%>
+         <label for="inputPassword" class="sr-only">Senha</label>
+          <%= text_field_tag :password , "", class: 'form-control',placeholder: "Senha", type: 'password'%>
+      <div class="checkbox mb-3">
+      <% if flash[:alert].present? %>
+         <div class="alert alert-danger alert-dismissible fade show" role="alert">
+             <strong><%= flash[:alert]%> </strong> 
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                </button>
+       <% end %>
+         </div>
+      </div>
+           <%= submit_tag "Acessar" , class: 'btn btn-lg btn-primary btn-block'%>
+                 <p class="mt-5 mb-3 text-muted">&copy; 2019-2020</p>
+<% end %>

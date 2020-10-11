@@ -1,0 +1,49 @@
+   
+           <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card strpied-tabled-with-hover">
+                                <div class="card-header ">
+                                <hr>
+                                    <h4 class="card-title">Aprovação de Batidas/Equipe</h4>
+                                <hr>    
+                         
+                                </div>
+                                   
+                                <div class="card-body table-responsive">
+                                 <hr>
+                                    <h4 class="card-title">Detalhamento</h4>
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <th>Equipe</th>
+                                            <th>Nome</th>
+                                            <th>CodPessoa</th>
+                                            <th>Chapa</th>
+                                            <th>Acões</th>
+                                        </thead>
+                                        <% if @result.present? %>
+                                         <% @result.each do |aprovar| %> 
+                                        <tbody>
+                                            <tr>
+                                                <th><%= aprovar.try(:CODEQUIPE).try(:content)%></th>
+                                                <th><%= aprovar.try(:NOME).try(:content) %></th>
+                                                <th><%= aprovar.try(:CODPESSOA).try(:content)%></th>
+                                                <th><%= aprovar.try(:CHAPA).try(:content)%></th>
+                                                <th> 
+                                                  <%= link_to 'Batidas', pages_acomp_ponto_index_path %> | 
+                                                  <%= link_to 'Justificativas', pages_acomp_func_index_path%> 
+                                                </th>
+                                            </tr>
+
+                                            <% end %>           
+                                         <% end %> 
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                          
+        </div>
+    </div>
+
