@@ -1,6 +1,8 @@
 class Pages::AcompPontoController < PagesController
      
   def index  
+
+    
   if params[:commit].to_s == "Enviar"
     #puts "enviando valores"
      enviarDados(params[:data_ini],params[:data_fim],params[:cod_pessoa])

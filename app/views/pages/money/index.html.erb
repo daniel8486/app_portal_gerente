@@ -30,15 +30,15 @@
                                          <% @result.each do |money| %> 
                                         <tbody>
                                             <tr>
-                                                 <th><%= money.try(:DTMUDANCACHAR).try(:content)%></th>
+                                                 <th><%= money.try(:DTMUDANCACHAR).try(:content).to_date.strftime("%d/%m/%Y")%></th>
                                                  <th><%= money.try(:CHAPA).try(:content)%></th>
                                                  <th><%= money.try(:NOME).try(:content) %></th>
-                                                 <th><%= money.try(:DTMUDANCA).try(:content) %></th>
+                                                 <th><%= money.try(:DTMUDANCA).try(:content).to_date.strftime("%d/%m/%Y") %></th>
                                                  <th><%= money.try(:SALARIO).try(:content) %></th>
                                                  <th><%= money.try(:MOTIVO).try(:content)%></th>
                                                  <th><%= money.try(:DESCRICAO).try(:content) %></th>
                                                  <th><%= money.try(:PERCENTAPLICADO).try(:content) %></th>
-                                                 <th><%= money.try(:DATADEREFERENCIA).try(:content) %></th>
+                                                 <th><%= money.try(:DATADEREFERENCIA).try(:content).to_date.strftime("%d/%m/%Y") %></th>
                                             </tr>
 
                                             <% end %>           

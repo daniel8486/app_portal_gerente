@@ -153,13 +153,13 @@
               </div>
             </li>
 
-          
+            <p>  Olá , <%= @result.try(:NOME).try(:content) %>, Data Acesso: <%= Date.today.strftime('%d/%m/%Y') %>  </p>
 
             <div class="topbar-divider d-none d-sm-block"></div>
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
-              
+            
               <%= link_to 'SAIR' , pages_welcome_destroy_path(params[:username],params[:password]), method: :delete, data: { confirm: 'Tem Certeza?' }, class: "mr-2 d-none d-lg-inline text-gray-600 small" %>
               </a>
               <!-- Dropdown - User Information -->

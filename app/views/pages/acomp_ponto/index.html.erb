@@ -36,17 +36,17 @@
                                     <h4 class="card-title">Detalhamento</h4>
                                     <table class="table table-hover">
                                         <thead>
-                                            <th>Batidas</th>
-                                            <th>Horario</th>
                                             <th>Data</th>
+                                            <th>Horario</th>
+                                            <th>Batidas</th>
                                         </thead>
                                         <% if @result.present? %>
                                          <% @result.each do |acompponto| %> 
                                         <tbody>
                                             <tr>
-                                                <th><%= acompponto.try(:BATIDAS).try(:content)%></th>
+                                                <th><%= acompponto.try(:DATA).try(:content).to_date.strftime("%d/%m/%Y")%></th>
                                                 <th><%= acompponto.try(:HORARIO).try(:content) %></th>
-                                                <th><%= acompponto.try(:DATA).try(:content)%></th>
+                                                <th><%= acompponto.try(:BATIDAS).try(:content)%></th>
                                             </tr>
 
                                             <% end %>           

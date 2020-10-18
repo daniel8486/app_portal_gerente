@@ -48,7 +48,7 @@
                                         <tbody>
                                             <tr>
                                                 <th><%= acompfunc.try(:CHAPA).try(:content)%></th>
-                                                <th><%= acompfunc.try(:DATA).try(:content) %></th>
+                                                <th><%= acompfunc.try(:DATA).try(:content).to_date.strftime("%d/%m/%Y") %></th>
                                                 <th><%= acompfunc.try(:INICIO).try(:content)%></th>
                                                 <th><%= acompfunc.try(:FIM).try(:content)%></th>
                                                 <th><%= acompfunc.try(:TOTAL).try(:content) %></th>

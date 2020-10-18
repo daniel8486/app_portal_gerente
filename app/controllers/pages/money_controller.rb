@@ -1,5 +1,7 @@
 class Pages::MoneyController < PagesController
   def index 
+    
+
     @client = Savon.client(
       :wsdl => 'http://10.1.11.161/TOTVSBusinessConnect/wsDataServer.asmx?wsdl',
       # env_namespace: :soapenv,

@@ -1,5 +1,6 @@
 class Pages::AprovarBatidaController < PagesController
   def index
+    
     client = Savon.client(
     :wsdl => 'http://10.1.11.161/TOTVSBusinessConnect/wsConsultaSQL.asmx?wsdl',
     # env_namespace: :soapenv,

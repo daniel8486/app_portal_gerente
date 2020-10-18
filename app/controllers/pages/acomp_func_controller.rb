@@ -1,5 +1,7 @@
 class Pages::AcompFuncController < PagesController
   def index  
+
+    
    
     if params[:commit].to_s == "Enviar"
       #puts "enviando valores"

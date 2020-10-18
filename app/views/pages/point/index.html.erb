@@ -32,17 +32,17 @@
                                     <h4 class="card-title">Detalhamento</h4>
                                     <table class="table table-hover">
                                         <thead>
-                                            <th>Batidas</th>
-                                            <th>Horario</th>
                                             <th>Data</th>
+                                            <th>Horario</th>
+                                            <th>Batidas</th>
                                         </thead>
                                         <% if @result.present? %>
                                          <% @result.each do |point| %> 
                                         <tbody>
                                             <tr>
-                                                <th><%= point.try(:BATIDAS).try(:content)%></th>
-                                                <th><%= point.try(:HORARIO).try(:content) %></th>
                                                 <th><%= point.try(:DATA).try(:content)%></th>
+                                                <th><%= point.try(:HORARIO).try(:content) %></th>
+                                                <th><%= point.try(:BATIDAS).try(:content)%></th>
                                             </tr>
 
                                             <% end %>           
